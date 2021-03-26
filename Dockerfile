@@ -84,4 +84,6 @@ HEALTHCHECK --interval=1m --timeout=3s \
   CMD curl -f http://localhost/ || exit 1
 
 EXPOSE 80
+STOPSIGNAL SIGTERM
+
 CMD ["docker/run-services.sh"]
