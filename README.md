@@ -1,7 +1,7 @@
 # docker-yii2
 
-This is the repository for a base docker image to use with the Yii2 framework. It is based upon the official PHP image,
-and contains additional PHP extensions required to run Yii2. 
+This is the repository for the docker image `destinynv/docker-yii2` to use with the Yii2 framework.
+It is based upon the official PHP image and contains additional PHP extensions required to run Yii2.
 
 # Included packages
 * Apache 2.4
