@@ -48,6 +48,7 @@ RUN apt-get update \
         sockets \
         xmlrpc \
         zip \
+        calendar \
 	&& apt-get purge -y \
         libcurl3-dev \
         libicu-dev \
