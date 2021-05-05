@@ -20,6 +20,7 @@ RUN apt-get update \
 # Install required PHP libraries
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
+        freetds-dev \
         libcurl3-dev \
         libicu-dev \
         libfreetype6-dev \
@@ -33,6 +34,7 @@ RUN apt-get update \
         zlib1g-dev \
         libcurl4-openssl-dev \
         libssl-dev \
+    && ln -s /usr/lib/x86_64-linux-gnu/libsybdb.so /usr/lib/ \
     && docker-php-ext-configure bcmath \
     && docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ \
     && docker-php-ext-install -j "$(nproc)" \
@@ -43,6 +45,7 @@ RUN apt-get update \
         intl \
         mbstring \
         opcache \
+        pdo_dblib \
         pdo_mysql \
         soap \
         sockets \
@@ -50,6 +53,7 @@ RUN apt-get update \
         zip \
         calendar \
 	&& apt-get purge -y \
+        freetds-dev \
         libcurl3-dev \
         libicu-dev \
         libfreetype6-dev \
